@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>DATABASE | imtrollmastr</title>
+<link rel="icon" href="images/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script>
+  function checkPassword() {
+    var password = document.getElementById("passwordBox");
+    var passwordText = password.value;
+    if(passwordText == "authorizeITuBuM") {
+      return true;
+    }
+    alert("ErrorData: accessdenied; returnedVoid")
+    return false
+  }
+</script>
+   </head>
+   <body>
+    <h3>Welcome to the DATABASE/Admin Panel for imtrollmastr.</h3>
+    <p>You have access to this panel because you are one of the administrators.</p>
+    <p>NOTICE: If you are a random user, please go back to the homepage.</p>
+
+    <p>Authorization Panel</p>
+    <form>
+        <label for="checkbox">No LOGIN Required</label>
+        <input type="checkbox" id="checkbox" name="checkbox">
+        <label for="checkbox">Lock WEBPAGES</label>
+        <input type="checkbox" id="checkbox" name="checkbox">
+        <label for="checkbox">Delete all Google Verification Pages</label>
+        <input type="checkbox" id="checkbox" name="checkbox">
+        <label for="checkbox">Transmit all ADMIN to Global Users</label>
+        <input type="checkbox" id="checkbox" name="checkbox">
+      </form>
+    <p>Password:<input id="passwordBox" type="password"/></p>
+    <a href="database.html" onclick="return checkPassword();">Authorize ACTIONS</a>
+      </body>
+</html>

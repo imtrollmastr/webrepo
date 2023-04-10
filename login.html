@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>USER LOGIN | imtrollmastr</title>
+<link rel="icon" href="images/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+  body {
+    background-color: lightblue;
+    padding: 30px;
+    font-family: 'Luckiest Guy', cursive;
+  }
+
+  h2, h3, h4 {
+  font-family: 'Luckiest Guy', cursive;
+}
+</style>
+<script>
+  function checkPassword() {
+    var password = document.getElementById("passwordBox");
+    var passwordText = password.value;
+    if(passwordText == "userACCESS123") {
+      return true;
+    }
+    alert("ErrorData: accessdenied; returnedVoid")
+    return false
+  }
+</script>
+   </head>
+   <body>
+    <h3>Welcome to the Authorization Page for imtrollmastr</h3>
+    <p>Please state your username, password.</p>
+    <p>NOTICE: The password is currently hidden unless you are given the password.</p>
+    <p>Sorry for any inconvenience.</p>
+    <form method="contact">
+        <label for="username">Username:</label>
+        <input type="text" name="username" required>
+    <p>Password:<input id="passwordBox" type="password"/></p>
+    <a href="index.html" onclick="return checkPassword();">Authorize</a>
+      </body>
+</html>
