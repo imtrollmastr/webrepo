@@ -39,4 +39,22 @@ if ($payload) {
   echo json_encode(['success' => false, 'error' => 'Token verification failed']);
 }
 
+session_start();
+
+if (isset($_SESSION['email'])) {
+  // The user is already authenticated, redirect to the homepage
+  header('Location: /homepage');
+  exit();
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  // Handle the ID token verification and user authentication here
+  // (see the previous steps for details)
+} else {
+  // The user is not authenticated, show the login page
+  include 'login.html';
+}
+
 ?>
+
+
