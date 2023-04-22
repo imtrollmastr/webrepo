@@ -60,7 +60,19 @@
       console.error('Token verification failed: ' + xhr.responseText);
     }
   };
-  xhr.send('idtoken=' + id_token);
+  xhr.open('POST', 'https://imtrollmastr.vercel.app/verify_token.php');
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+xhr.onload = function() {
+  if (xhr.status === 200) {
+    // Verification successful, log the user in to your website and redirect to the homepage
+    // (replace this with your own login code)
+    window.location.href = "/index.html?email=" + email;
+  } else {
+    // Verification failed, handle the error
+    console.error('Token verification failed: ' + xhr.responseText);
+  }
+};
+xhr.send('idtoken=' + id_token);
 }
       </script>
       </body>
