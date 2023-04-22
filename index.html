@@ -24,6 +24,7 @@
       </select>
     </form>
 </div>
+<script>
 var name = decodeURIComponent(getUrlParameter("name"));
 var email = decodeURIComponent(getUrlParameter("email"));
 var picture = decodeURIComponent(getUrlParameter("picture"));
@@ -31,6 +32,7 @@ var picture = decodeURIComponent(getUrlParameter("picture"));
 document.getElementById("user-name").innerText = name;
 document.getElementById("user-email").innerText = email;
 document.getElementById("user-picture").setAttribute("src", picture);
+  </script>
 <nav class="w3-bar w3-black">
     <a href="index.html" class="w3-button w3-bar-item">Home</a>
     <a href="roblox.html" class="w3-button w3-bar-item">Roblox Profile</a>
