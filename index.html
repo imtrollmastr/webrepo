@@ -6,6 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
 <link rel="stylesheet" href="style.css">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="720327052488-ibslkp5h4q5igu1ee368j939ra8op93b.apps.googleusercontent.com">
+
 <body>
 <!-- Content will go here -->
 <!-- Navigation -->
@@ -21,6 +24,13 @@
       </select>
     </form>
 </div>
+var name = decodeURIComponent(getUrlParameter("name"));
+var email = decodeURIComponent(getUrlParameter("email"));
+var picture = decodeURIComponent(getUrlParameter("picture"));
+
+document.getElementById("user-name").innerText = name;
+document.getElementById("user-email").innerText = email;
+document.getElementById("user-picture").setAttribute("src", picture);
 <nav class="w3-bar w3-black">
     <a href="index.html" class="w3-button w3-bar-item">Home</a>
     <a href="roblox.html" class="w3-button w3-bar-item">Roblox Profile</a>
