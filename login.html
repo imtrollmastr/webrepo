@@ -37,43 +37,5 @@
         <input type="text" name="username" required>
     <p>Password:<input id="passwordBox" type="password"/></p>
       <a href="index.html" onclick="return checkPassword();">Authorize</a>
-      <p>LOGIN WITH GOOGLE</p>
-      <div class="g-signin2" data-onsuccess="onSignIn"></div>
-        <script>
-        function onSignIn(googleUser) {
-  // Get the user's ID token and basic profile information
-  var id_token = googleUser.getAuthResponse().id_token;
-  var profile = googleUser.getBasicProfile();
-  
-  // Send the ID token and profile information to your server-side code for verification
-  // (replace "VERIFY_TOKEN_URL" with the URL of your server-side verification endpoint)
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'VERIFY_TOKEN_URL');
-  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  xhr.onload = function() {
-    if (xhr.status === 200) {
-      // Verification successful, log the user in to your website and redirect to the homepage
-      // (replace this with your own login code)
-      window.location.href = "/index.html?name=" + profile.getName() + "&email=" + profile.getEmail() + "&picture=" + profile.getImageUrl();
-    } else {
-      // Verification failed, handle the error
-      console.error('Token verification failed: ' + xhr.responseText);
-    }
-  };
-  xhr.open('POST', 'https://imtrollmastr.vercel.app/verify_token.php');
-xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-xhr.onload = function() {
-  if (xhr.status === 200) {
-    // Verification successful, log the user in to your website and redirect to the homepage
-    // (replace this with your own login code)
-    window.location.href = "/index.html?email=" + email;
-  } else {
-    // Verification failed, handle the error
-    console.error('Token verification failed: ' + xhr.responseText);
-  }
-};
-xhr.send('idtoken=' + id_token);
-}
-      </script>
       </body>
 </html>
