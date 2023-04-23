@@ -43,7 +43,7 @@ session_start();
 
 if (isset($_SESSION['email'])) {
   // The user is already authenticated, redirect to the homepage
-  header('Location: /homepage');
+  header('Location: /index.html');
   exit();
 }
 
