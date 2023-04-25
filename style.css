@@ -4,10 +4,12 @@
 /* Set default font family to 'Luckiest Guy' for all headings and body text */
 body {
   font-family: 'Luckiest Guy', cursive;
+  text-align: center;
 }
 
-h2, h3, h4, h5 {
+h1, h2, h3, h4, h5 {
   font-family: 'Luckiest Guy', cursive;
+  text-align: center;
 }
 
 /* Style the navigation bar */
@@ -50,6 +52,7 @@ button {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  text-align: center;
 }
 
 button:hover {
@@ -57,10 +60,6 @@ button:hover {
   color: #333;
 }
 
-h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
   margin-top: 20px;
 }
-
-h2 {
-    text-align: center;
-  }
