@@ -63,3 +63,12 @@ button:hover {
 h1, h2, h3, h4, h5, h6 {
   margin-top: 20px;
 }
+
+#video-preview {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  margin: 10px;
+}
