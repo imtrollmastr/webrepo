@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Recorder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>VIDEO/AUDIO RECORDER</h1>
+  <video id="video-preview"></video>
+  <button id="start-recording">Start Recording</button>
+  <button id="stop-recording">Stop Recording</button>
+
+  <script>
+    const startRecordingButton = document.getElementById('start-recording');
+const stopRecordingButton = document.getElementById('stop-recording');
+const videoPreview = document.getElementById('video-preview');
+
+let mediaRecorder;
+let recordedChunks = [];
+
+startRecordingButton.addEventListener('click', async () => {
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
+  videoPreview.srcObject = stream;
+  videoPreview.play();
+
+  mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
+
+  mediaRecorder.addEventListener('dataavailable', (event) => {
+    if (event.data.size > 0) {
+      recordedChunks.push(event.data);
+    }
+  });
+
+  mediaRecorder.addEventListener('stop', () => {
+    const videoBlob = new Blob(recordedChunks, { type: 'video/webm' });
+    const videoUrl = URL.createObjectURL(videoBlob);
+    const downloadLink = document.createElement('a');
+    downloadLink.href = videoUrl;
+    downloadLink.download = 'video.webm';
+    downloadLink.click();
+  });
+
+  mediaRecorder.start();
+});
+
+stopRecordingButton.addEventListener('click', () => {
+  mediaRecorder.stop();
+});
+  </script>
+</body>
+</html>
