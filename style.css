@@ -72,3 +72,17 @@ h1, h2, h3, h4, h5, h6 {
 button {
   margin: 10px;
 }
+
+.status-indicator_content__7XAr8 {
+  width: 223px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  padding: 0 var(--geist-gap-half);
+  border: 1px solid var(--accents-2);
+  border-radius: var(--geist-radius);
+  background-color: var(--geist-background);
+  transition: background .2s;
+  letter-spacing: -.01em;
+}
