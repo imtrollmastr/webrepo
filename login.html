@@ -32,5 +32,17 @@
     <p>Password:<input id="passwordBox" type="password"/></p>
       <a href="index.html" onclick="return checkPassword();">Authorize</a>
       <button onclick="window.location.href='https://github.com/login/oauth/authorize?client_id=e96a750f0e30abb4da49&redirect_uri=https://imtrollmastr.vercel.app/&scope=user:username/'">LOGIN WITH GITHUB</button>
-      </body>
+      <script>
+        const toggleButton = document.getElementById('toggle-button');
+const content = document.getElementById('content');
+
+toggleButton.addEventListener('click', () => {
+  if (content.style.display === 'none') {
+    content.style.display = 'block';
+  } else {
+    content.style.display = 'none';
+  }
+});
+      </script>
+    </body>
 </html>
