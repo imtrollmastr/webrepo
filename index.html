@@ -8,19 +8,6 @@
 <link rel="stylesheet" href="https://imtrollmastr.vercel.app/style.css">
 
 <body>
-  <script>
-    const username = document.getElementById('username');
-
-fetch('https://api.github.com/user', {
-  headers: {
-    'Authorization': 'token e96a750f0e30abb4da49',
-  },
-})
-.then(response => response.json())
-.then(data => {
-  username.textContent = data.login;
-});
-  </script>
 <!-- add alert in <script> tags if needed-->
 <!-- Content will go here -->
 <!-- Navigation -->
@@ -98,6 +85,19 @@ fetch('https://api.github.com/user', {
       </div>
     </div>
   </footer>
+  <script>
+    const username = document.getElementById('username');
+
+fetch('https://api.github.com/user', {
+  headers: {
+    'Authorization': 'token e96a750f0e30abb4da49',
+  },
+})
+.then(response => response.json())
+.then(data => {
+  username.textContent = data.login;
+});
+  </script>
 </body>
 
 </html>
