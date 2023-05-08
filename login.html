@@ -21,11 +21,16 @@
     <p>Please state your username, password.</p>
     <p>NOTICE: The password is currently hidden unless you are given the password.</p>
     <p>Sorry for any inconvenience.</p>
+    <h4>IF YOU HAVE ALREADY LOGGED IN, PLEASE CLICK THIS BUTTON.</h4>
+    <button id="toggle-button">Toggle</button>
+<div id="content" style="display: none;">
+  <p>You have already logged in, if you are not redirected to the homepage, please </p><a href="https://imtrollmastr.vercel.app/index.html/>click here.</a>
+</div>
     <form method="contact">
         <label for="username">Username:</label>
         <input type="text" name="username" required>
     <p>Password:<input id="passwordBox" type="password"/></p>
       <a href="index.html" onclick="return checkPassword();">Authorize</a>
-      <button onclick="window.location.href='https://github.com/login/oauth/authorize?client_id=e96a750f0e30abb4da49&redirect_uri=https://imtrollmastr.vercel.app/&scope=user:username,user:email,read:user/'">LOGIN WITH GITHUB</button>
+      <button onclick="window.location.href='https://github.com/login/oauth/authorize?client_id=e96a750f0e30abb4da49&redirect_uri=https://imtrollmastr.vercel.app/&scope=user:username/'">LOGIN WITH GITHUB</button>
       </body>
 </html>
