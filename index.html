@@ -86,7 +86,8 @@
     </div>
   </footer>
   <script>
-    const username = document.getElementById('username');
+document.addEventListener('DOMContentLoaded', () => {
+  const username = document.getElementById('username');
 
 fetch('https://api.github.com/user', {
   headers: {
@@ -96,6 +97,7 @@ fetch('https://api.github.com/user', {
 .then(response => response.json())
 .then(data => {
   username.textContent = data.login;
+});
 });
   </script>
 </body>
