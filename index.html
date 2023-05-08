@@ -96,7 +96,11 @@ fetch('https://api.github.com/user', {
 })
 .then(response => response.json())
 .then(data => {
+  console.log(data);
   username.textContent = data.login;
+})
+.catch(error => {
+  console.error(error);
 });
 });
   </script>
