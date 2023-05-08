@@ -8,6 +8,19 @@
 <link rel="stylesheet" href="https://imtrollmastr.vercel.app/style.css">
 
 <body>
+  <script>
+    const username = document.getElementById('username');
+
+fetch('https://api.github.com/user', {
+  headers: {
+    'Authorization': 'token e96a750f0e30abb4da49',
+  },
+})
+.then(response => response.json())
+.then(data => {
+  username.textContent = data.login;
+});
+  </script>
 <!-- add alert in <script> tags if needed-->
 <!-- Content will go here -->
 <!-- Navigation -->
@@ -24,6 +37,7 @@
     </form>
 </div>
   <script async src="https://js.sitesearch360.com/plugin/bundle/13361.js"></script>
+  <h4>Welcome, <div id="username"></div></h4>
 <nav class="w3-bar w3-black">
     <a href="index.html" class="w3-button w3-bar-item">Home</a>
     <a href="roblox.html" class="w3-button w3-bar-item">Roblox Profile</a>
