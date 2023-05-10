@@ -87,3 +87,9 @@ button {
   transition: background .2s;
   letter-spacing: -.01em;
 }
+
+.footer_social__TS_hG .footer_github__rmvAM {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+}
