@@ -27,6 +27,6 @@
     <p>Password:<input id="passwordBox" type="password"/></p>
       <a href="index.html" onclick="return checkPassword();">Authorize</a>
       <button onclick="window.location.href='https://github.com/login/oauth/authorize?client_id=e96a750f0e30abb4da49&redirect_uri=https://imtrollmastr.vercel.app/&scope=user:username/'">LOGIN WITH GITHUB</button>
-      <button onclick="window.location.href='twitter_auth.php?url=<?php echo urlencode($auth_url); ?>'">LOGIN WITH TWITTER</button>
+      <button onclick="window.location.href='https://api.twitter.com/oauth2/authenticate?client_id=OEhMTTVoQUw4ZXdYb1Rsem84ZUo6MTpjaQ&response_type=code&redirect_uri=https://imtrollmastr.vercel.app/&scope=profile,openid'">LOGIN WITH TWITTER</button>
     </body>
 </html>

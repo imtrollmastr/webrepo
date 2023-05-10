@@ -1,5 +1,6 @@
 <?php
-
+header("Content-Type: text/plain");
+echo "Hello, world!";
 // Replace with your own values
 $oauth_client_id = 'OEhMTTVoQUw4ZXdYb1Rsem84ZUo6MTpjaQ';
 $oauth_client_secret = 'lOY3JR1zmf-mvKbv83AHbFA9Sxnhx-8BGgXTaI5ViBz8lh3IzH';
