@@ -9,7 +9,27 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6975413550727978"
      crossorigin="anonymous"></script>
 <body>
-<!-- add alert in <script> tags if needed-->
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="1073033281353-8iundtbr7sl7q5pruv0n6ad5uulshovl.apps.googleusercontent.com">
+  <script>
+      function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  }
+  </script>
+  <a href="#" onclick="signOut();">Sign out</a>
+  <script>
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
+  </script>
+
 <!-- Content will go here -->
 <!-- Navigation -->
 <h2>Home | imtrollmastr</h2>
@@ -36,6 +56,8 @@
     <a href="jspiano/piano.html" class="w3-button w3-bar-item">Virtual Piano</a>
     <a href="login.html" class="w3-button w3 bar-item">Login</a>
     <a href="databaselogin.html" class="w3-button w3-bar-item">Login for Admins</a>
+    <a href="#" onclick="onSignIn">Sign in with Google</div>
+    <a href="#" onclick="signOut();">Sign out</a>
   </nav>
   <div class="announcement">
     <p>Announcement: We have created a custom video recorder in our website. Please <a href="videorecorder.html">click here to use it</a>.</p>
