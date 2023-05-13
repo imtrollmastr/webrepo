@@ -9,6 +9,8 @@ section {
 body {
   font-family: 'Luckiest Guy', cursive;
   text-align: center;
+  background-color: #fff;
+  color: #000;
 }
 
 h1, h2, h3, h4, h5 {
@@ -101,4 +103,9 @@ button {
 
 .twitter-timeline {
   margin: 0 auto;
+}
+
+.dark-mode {
+  background-color: #000;
+  color: #fff;
 }

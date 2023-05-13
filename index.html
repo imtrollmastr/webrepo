@@ -41,8 +41,14 @@
 					<option value="https://imtrollmastr-cnzh.vercel.app/">Chinese</option>
 				</select>
 			</form>
+      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
 		</div>
-
+    <script>
+      function toggleDarkMode() {
+        var body = document.getElementsByTagName("BODY")[0];
+        body.classList.toggle("dark-mode");
+      }
+    </script>
 		<section>
 			<h3>Introduction</h3>
 			<p>Hi, my name is imtrollmastr, you can call me Eddie. I am a YouTuber and I play The Simpsons: Tapped Out and Roblox. My favorite movie is The Simpsons Movie, especially the part where Homer points the middle finger. I stream online via Twitch. I love the Simpsons so much, I changed my school profile picture into a Simpsons GIF of Ralph Wiggum rolling down a hill while Lisa Simpson watches. My wish is to try Duff Beer in real life.</p>
