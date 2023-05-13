@@ -9,28 +9,9 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6975413550727978"
      crossorigin="anonymous"></script>
 <body>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <meta name="google-signin-client_id" content="1073033281353-8iundtbr7sl7q5pruv0n6ad5uulshovl.apps.googleusercontent.com">
   <script>
-      function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-  }
-  </script>
-  <a href="#" onclick="signOut();">Sign out</a>
-  <script>
-    function signOut() {
-      var auth2 = gapi.auth2.getAuthInstance();
-      auth2.signOut().then(function () {
-        console.log('User signed out.');
-      });
-    }
-  </script>
-  <script>
-    var alert = "Please use the supporting browsers: Opera, Google Chrome, or "
+    var alert = "Please use the supporting browsers: Opera, Google Chrome, or Firefox"
+    alert(alert)
   </script>
 <!-- Content will go here -->
 <!-- Navigation -->
@@ -62,9 +43,6 @@
     <a href="#" onclick="signOut();">Sign out</a>
   </nav>
   <div class="announcement">
-    <script>
-      alert(alert)
-    </script>
     <p>Announcement: We have created a custom video recorder in our website. Please <a href="videorecorder.html">click here to use it</a>.</p>
   </div>  
   <h3>Introduction</h3>
