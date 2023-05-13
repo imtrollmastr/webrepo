@@ -1,6 +1,11 @@
 
 
 /* Set default font family to 'Luckiest Guy' for all headings and body text */
+section {
+  font-family: 'Luckiest Guy', cursive;
+  text-align: center;
+}
+
 body {
   font-family: 'Luckiest Guy', cursive;
   text-align: center;
