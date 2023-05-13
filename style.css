@@ -98,3 +98,7 @@ button {
   width: 18px;
   height: 18px;
 }
+
+.twitter-timeline {
+  margin: 0 auto;
+}
