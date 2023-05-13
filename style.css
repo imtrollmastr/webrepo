@@ -1,5 +1,4 @@
-/* Import the 'Luckiest Guy' font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
 
 /* Set default font family to 'Luckiest Guy' for all headings and body text */
 body {
@@ -27,7 +26,8 @@ nav a {
   text-decoration: none;
   padding: 10px;
   font-weight: bold;
-}
+}/* Import the 'Luckiest Guy' font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 /* Style the announcement box */
 .announcement {
