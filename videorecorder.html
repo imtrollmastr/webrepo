@@ -23,7 +23,7 @@ startRecordingButton.addEventListener('click', async () => {
   videoPreview.srcObject = stream;
   videoPreview.play();
 
-  mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
+  mediaRecorder = new MediaRecorder(stream, { mimeType: 'video/mp4' });
 
   mediaRecorder.addEventListener('dataavailable', (event) => {
     if (event.data.size > 0) {
