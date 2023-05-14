@@ -109,3 +109,49 @@ button {
   background-color: #000;
   color: #fff;
 }
+
+.movie-playback {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  font-family: 'Luckiest Guy', cursive;
+}
+
+.movie-playback video {
+	width: 100%;
+	max-width: 800px;
+	height: auto;
+	margin-bottom: 20px;
+}
+
+.movie-playback h2 {
+	font-size: 32px;
+	margin-bottom: 10px;
+  font-family: 'Luckiest Guy', cursive;
+}
+
+.movie-playback p {
+	font-size: 18px;
+	margin-bottom: 5px;
+  font-family: 'Luckiest Guy', cursive;
+}
+
+.movie-playback .btn {
+	display: inline-block;
+	padding: 10px 20px;
+	margin: 20px;
+	background-color: #f44336;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+	transition: background-color 0.3s;
+  font-family: 'Luckiest Guy', cursive;
+}
+
+.movie-playback .btn:hover {
+	background-color: #e53935;
+  font-family: 'Luckiest Guy', cursive;
+}
