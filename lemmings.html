@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
 	<link rel="stylesheet" href="https://imtrollmastr.vercel.app/style.css">
+	<link href="//vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+	<script src="//vjs.zencdn.net/7.11.4/video.min.js"></script>
 </head>
 <body>
     <nav class="w3-bar w3-black">
@@ -22,7 +24,12 @@
 	</nav>
     <main>
 		<section class="movie-playback">
-			<video src="https://firebasestorage.googleapis.com/v0/b/movieholding-43614.appspot.com/o/ProjectLEMMINGS.MOV?alt=media&token=f146ba8f-2790-4b86-bba5-2c5b84bda4f2" controls></video>
+			<video id="my-video" class="video-js" controls preload="auto" poster="images/LEMMINGSTHUMBNAIL.png" data-setup="{"controls": true}">
+				<source src="https://firebasestorage.googleapis.com/v0/b/movieholding-43614.appspot.com/o/ProjectLEMMINGS.MOV?alt=media&token=f146ba8f-2790-4b86-bba5-2c5b84bda4f2" type='video/mov'>
+				<p class="vjs-no-js">
+					To view this video please enable JavaScript, and consider upgrading to a web browser that supports HTML5 video.
+				</p>
+			</video>
 			<h2>The LEMMINGS Movie</h2>
 			<p>Release Date: May 24, 2023</p>
 			<p>Duration: 1 minute, 30 seconds</p>
@@ -33,4 +40,8 @@
 			<a href="lemmingstrailer.html" class="btn">Watch Trailer</a>
 		</section>
 	</main>
+	<script>
+		var player = videojs('my-video');
+	  </script>
 </body>
+</html>
