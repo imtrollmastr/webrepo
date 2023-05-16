@@ -155,3 +155,8 @@ button {
 	background-color: #e53935;
   font-family: 'Luckiest Guy', cursive;
 }
+
+.thumbnail {
+  width: 100px;
+  height: 100px;
+}
