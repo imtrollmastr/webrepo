@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Loading Page</title>
+	<meta http-equiv="refresh" content="5;url=https://imtrollmastr.vercel.app/movies.html/">
+	<link rel="stylesheet" href="https://imtrollmastr.vercel.app/style.css">
+	<style>
+		body {
+			background-color: #f5f5f5;
+			font-family: sans-serif;
+			font-size: 18px;
+		}
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		.loader {
+			border: 10px solid #ccc;
+			border-top-color: #333;
+			border-radius: 50%;
+			width: 50px;
+			height: 50px;
+			animation: spin 1s linear infinite;
+			margin-bottom: 20px;
+		}
+		@keyframes spin {
+			to {transform: rotate(360deg);}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="loader"></div>
+		<p>Please wait while the page is loading...</p>
+	</div>
+</body>
+</html>
