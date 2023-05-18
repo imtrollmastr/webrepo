@@ -16,8 +16,8 @@
 		var alertmessage = "Please use the Google Chrome, Opera or FireFox to proceed into these website.";
 		alert(alertmessage);
 	</script>
-	<div class="g-signin2" data-onsuccess="onSignIn"></div>
-	<a href="#" onclick="signOut();">Sign out</a>
+	<div class="g-signin2" class="signout" data-onsuccess="onSignIn"></div>
+	<a href="#" class="signout" onclick="signOut();">Sign out</a>
 <script>
   function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
