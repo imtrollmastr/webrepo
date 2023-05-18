@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
 	<link rel="stylesheet" href="https://imtrollmastr.vercel.app/style.css">
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<meta name="google-signin-client_id" content="1073033281353-glvkqhqupi9gqkmgv1qi0nh57jbtkah8.apps.googleusercontent.com">
 </head>
 
 <body>
@@ -14,7 +16,25 @@
 		var alertmessage = "Please use the Google Chrome, Opera or FireFox to proceed into these website.";
 		alert(alertmessage);
 	</script>
-	
+	<div class="g-signin2" data-onsuccess="onSignIn"></div>
+	<a href="#" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+	<script>
+			function onSignIn(googleUser) {
+		var profile = googleUser.getBasicProfile();
+		console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+		console.log('Name: ' + profile.getName());
+		console.log('Image URL: ' + profile.getImageUrl());
+		console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+	  }
+	</script>
 	<!-- Navigation -->
 	<nav class="w3-bar w3-black">
 		<a href="index.html" class="w3-button w3-bar-item">Home</a>
