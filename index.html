@@ -15,8 +15,6 @@
 	<script>
 		alert();
 	</script>
-	<div class="signout" data-onsuccess="onSignIn">Sign in with Google</div>
-	<a href="#" class="signout" onclick="signOut();">Sign out</a>
 <script>
   function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
@@ -64,6 +62,8 @@
 			</form>
       <button onclick="toggleDarkMode()">Toggle Dark/White Mode</button>
 		</div>
+		<div class="g-signin2" data-onsuccess="onSignIn"></div>
+		<a href="#" class="signout" onclick="signOut();">Sign out</a>
     <script>
       function toggleDarkMode() {
         var body = document.getElementsByTagName("BODY")[0];
