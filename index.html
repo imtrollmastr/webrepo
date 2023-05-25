@@ -61,6 +61,20 @@
 		</div>
 		<div class="g-signin2 signin" data-onsuccess="onSignIn"></div>
 		<button onclick="signOut();">Sign out of Google</button>
+			<!-- Create a div element to display the welcome message -->
+	<div id="welcome-message"></div>
+
+	<!-- Define the JavaScript function to update the welcome message -->
+	<script>
+		function onSignIn(googleUser) {
+			// Get the user's profile information
+			var profile = googleUser.getBasicProfile();
+			// Get the user's name
+			var name = profile.getName();
+			// Update the welcome message with the user's name
+			document.getElementById("welcome-message").innerHTML = "Welcome, " + name + "!";
+		}
+	</script>
     <script>
       function toggleDarkMode() {
         var body = document.getElementsByTagName("BODY")[0];
