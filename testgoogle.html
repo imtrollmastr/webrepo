@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Custom Welcome Page</title>
+	<!-- Include the Google Sign-In API -->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<meta name="google-signin-client_id" content="1073033281353-tj3nr1eib0chfsl6rf06h2uk3ke58him.apps.googleusercontent.com">
+	<!-- Define the CSS style for the welcome message -->
+	<style>
+		#welcome-message {
+			font-size: 24px;
+			font-weight: bold;
+			text-align: center;
+		margin-top: 100px;
+		}
+	</style>
+</head>
+<body>
+	<!-- Create a div element to display the welcome message -->
+	<div id="welcome-message"></div>
+
+	<!-- Add the Google Sign-In button -->
+	<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+	<!-- Define the JavaScript function to update the welcome message -->
+	<script>
+		function onSignIn(googleUser) {
+			// Get the user's profile information
+			var profile = googleUser.getBasicProfile();
+			// Get the user's name
+			var name = profile.getName();
+			// Update the welcome message with the user's name
+			document.getElementById("welcome-message").innerHTML = "Welcome, " + name + "!";
+		}
+	</script>
+</body>
+</html>
