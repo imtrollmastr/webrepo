@@ -13,22 +13,48 @@
 
 <body>
 <script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
+	gapi.load('auth2', function() {
+  gapi.auth2.init({
+    client_id: '1073033281353-tj3nr1eib0chfsl6rf06h2uk3ke58him.apps.googleusercontent.com',
+  }).then(function() {
+    // Configure the Google Sign-In button
+    var signInButton = document.getElementById('google-signin-button');
+    var signOutButton = document.getElementById('google-signout-button');
+    
+    // Hide the sign-out button by default
+    signOutButton.style.display = 'none';
+    
+    // Add event listener to the sign-in button
+    signInButton.addEventListener('click', function() {
+      gapi.auth2.getAuthInstance().signIn().then(function() {
+        // On successful sign-in, hide the sign-in button and show the sign-out button
+        signInButton.style.display = 'none';
+        signOutButton.style.display = 'block';
+      });
     });
-  }
+    
+    // Add event listener to the sign-out button
+    signOutButton.addEventListener('click', function() {
+      gapi.auth2.getAuthInstance().signOut().then(function() {
+        // On successful sign-out, hide the sign-out button and show the sign-in button
+        signOutButton.style.display = 'none';
+        signInButton.style.display = 'block';
+      });
+    });
+    
+    // Check the user's authentication status on page load
+    if (gapi.auth2.getAuthInstance().isSignedIn.get()) {
+      // If the user is already signed in, hide the sign-in button and show the sign-out button
+      signInButton.style.display = 'none';
+      signOutButton.style.display = 'block';
+    } else {
+      // If the user is not signed in, hide the sign-out button and show the sign-in button
+      signOutButton.style.display = 'none';
+      signInButton.style.display = 'block';
+    }
+  });
+});
 </script>
-	<script>
-			function onSignIn(googleUser) {
-		var profile = googleUser.getBasicProfile();
-		console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-		console.log('Name: ' + profile.getName());
-		console.log('Image URL: ' + profile.getImageUrl());
-		console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-	  }
-	</script>
 	<!-- Navigation -->
 	<nav class="w3-bar w3-black">
 		<a href="index.html" class="w3-button w3-bar-item">Home</a>
@@ -59,22 +85,8 @@
 			</form>
       <button onclick="toggleDarkMode()">Toggle Dark/White Mode</button>
 		</div>
-		<div class="g-signin2 signin" data-onsuccess="onSignIn"></div>
-		<button onclick="signOut();">Sign out of Google</button>
-			<!-- Create a div element to display the welcome message -->
-	<div id="welcome-message"></div>
-
-	<!-- Define the JavaScript function to update the welcome message -->
-	<script>
-		function onSignIn(googleUser) {
-			// Get the user's profile information
-			var profile = googleUser.getBasicProfile();
-			// Get the user's name
-			var name = profile.getName();
-			// Update the welcome message with the user's name
-			document.getElementById("welcome-message").innerHTML = "Welcome, " + name + "!";
-		}
-	</script>
+		<button id="google-signin-button">Sign in with Google</button>
+<button id="google-signout-button">Sign out</button>
     <script>
       function toggleDarkMode() {
         var body = document.getElementsByTagName("BODY")[0];
