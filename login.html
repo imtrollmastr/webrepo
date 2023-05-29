@@ -3,6 +3,7 @@
         <title>User Login | imtrollmastr</title>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
         <meta name="google-signin-client_id" content="1073033281353-tj3nr1eib0chfsl6rf06h2uk3ke58him.apps.googleusercontent.com">
+        <link rel="stylesheet" href="https://imtrollmastr.vercel.app/style.css">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
@@ -165,7 +166,7 @@
             <input type="submit" class="submit" value="LOGIN">
             <span class="login-form-copy">Or Login with Google</span>
             <div class="social-icons">
-                <div class="social-icon google"><span class="fa fa-google g-signin2" data-onsuccess="onSignIn"></span></div>
+                <div class="social-icon google"><span class="login g-signin2" data-onsuccess="onSignIn"></span></div>
             </div>
             <script>
               function onSignIn(googleUser) {
