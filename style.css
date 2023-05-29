@@ -175,7 +175,7 @@ button {
 }
 
 .signin {
-  text-align: center;
+  margin: 0 auto;
 }
 
 #welcome-message {

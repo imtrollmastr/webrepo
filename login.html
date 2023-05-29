@@ -1,22 +1,172 @@
 <html>
-  <head>
-    <title>USER LOGIN | imtrollmastr</title>
-<link rel="icon" href="images/favicon.ico">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://imtrollmastr.vercel.app/style.css">
-<script src="validate.js"></script>
-   </head>
-   <body>
-    <h3>Welcome to the Authorization Page for imtrollmastr</h3>
-    <p>Please state your username, password.</p>
-    <p>NOTICE: The password is currently hidden unless you are given the password.</p>
-    <p>Sorry for any inconvenience.</p>
-    <form method="contact">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="usernameBox" required>
-    <p>Password:<input id="passwordBox" type="password" required/></p>
-      <a href="index.html" onclick="return checkPassword(); return checkUsername();">Authorize</a>
-      <button onclick="window.location.href='https://github.com/login/oauth/authorize?client_id=e96a750f0e30abb4da49&redirect_uri=https://imtrollmastr.vercel.app/&scope=user:username/'">LOGIN WITH GITHUB</button>
-      <button onclick="window.location.href='https://api.twitter.com/oauth/authenticate?oauth_token=AAAAAAAAAAAAAAAAAAAAAHGOnQEAAAAAVJbUJSrlhnOfz2jKwyKGfS%2FWuog%3DjyJj7cFkOeEhOMBbl7hpKVvP5ekueWrH9PKOTMI2kGHOEh28ku'">LOGIN WITH TWITTER</button>
+    <head>
+        <title>Social Login</title>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+            body{
+                background-image: url('bg.jpg');
+                display: flex;
+                justify-content: center;
+                font-family: 'Luckiest Guy', cursive;
+                background-position: center;
+                background-size: cover;
+            }
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                user-select: none;
+            }
+            .login
+            {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                padding: 40px;
+                color: white;
+                font-family: 'Luckiest Guy', cursive;
+                background-color: rgba(0,0,0,0.7);
+                border-radius: 5px;
+                box-shadow: 1px 1px 20px cyan;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 10px 0;
+            }
+            .login  header{
+                margin-bottom: 25px;
+                margin: 0 0 25px 0;
+            }
+            img{
+                position: relative;
+                width: 80px;
+                top: 50%;
+                border-radius: 50%;
+                box-shadow: 1px 1px 15px cyan;
+            }
+            .field
+            {
+                border: 1px solid cyan;
+                border-radius: 50px;
+                background-color: transparent;
+                width: 100%;
+                margin-bottom: 15px;
+                display: flex;
+            }
+            .field span{
+                color: white;
+                width: 40px;
+                line-height: 45px;
+                text-align: center;
+            }
+            .field input{
+                width: 100%;
+                height: 45px;
+                font-size: 1.1rem;
+                padding: 5px;
+                color: cyan;
+                background-color: transparent;
+                border: none;
+            }
+            .forgot-password
+            {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            .forgot-password a{
+                color: white;
+                text-decoration: none;
+            }
+            .forgot-password a:hover
+            {
+                text-decoration: underline;
+            }
+            .submit
+            {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                height: 45px;
+                margin-bottom: 25px;
+                font-family: 'Luckiest Guy', cursive;
+                font-size: 1.2rem;
+                color: white;
+                background-color: transparent;
+                border: 1px solid cyan;
+                border-radius: 125px;
+            }
+            .submit:hover{
+                cursor: pointer;
+                background-color: orangered;
+            }
+            .login-form-copy
+            {
+                margin-bottom: 15px;
+            }
+            .login-form_sign-up
+            {
+                text-decoration: none;
+                color: rgb(18, 190, 190);
+            }
+            .social-icons{
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                padding-bottom: 5px;
+            }
+            .social-icon{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.4rem;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                cursor: pointer;
+                margin-bottom: 25px;
+            }
+            .facebook{
+                background-color: #385998;
+            }
+            .instagram{
+                background: linear-gradient(rgb(243,5,171),rgb(205,95,4),yellow);
+            }
+            .twitter
+            {
+                background-color: #00ACEE;
+            }
+            .google
+            {
+                background-color: #CA3224;
+            }
+            .linkedin{
+                background-color: #0E76AB;
+            }
+             input:focus,input:hover,input:active
+             {
+                 outline: none;
+             }
+        </style>
+    </head>
+    <body>
+        <form action="" class="login">
+            <header><img src="login.png"></header>
+            <div class="field"><span class="fa fa-user"></span><input type="text" placeholder="Email or Username"></div>
+            <div class="field"><span class="fa fa-lock"></span><input type="password" placeholder="Password"></div>
+            <div class="forgot-password"><a href="">Forgot password?</a></div>
+            <input type="submit" class="submit" value="LOGIN">
+            <span class="login-form-copy">Or Login with</span>
+            <div class="social-icons">
+                <div class="social-icon instagram"><span class="fa fa-instagram"></span></div>
+                <div class="social-icon facebook"><span class="fa fa-facebook"></span></div>
+                <div class="social-icon google"><span class="fa fa-google"></span></div>
+                <div class="social-icon linkedin"><span class="fa fa-linkedin"></span></div>
+                <div class="social-icon twitter"><span class="fa fa-twitter"></span></div>
+            </div>
+            <span class="login-form-copy">Don't have an account?<a href="" class="login-form_sign-up">Sign up</a></span>
+        </form>
     </body>
 </html>

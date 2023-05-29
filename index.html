@@ -12,49 +12,6 @@
 </head>
 
 <body>
-<script>
-	gapi.load('auth2', function() {
-  gapi.auth2.init({
-    client_id: '1073033281353-tj3nr1eib0chfsl6rf06h2uk3ke58him.apps.googleusercontent.com',
-  }).then(function() {
-    // Configure the Google Sign-In button
-    var signInButton = document.getElementById('google-signin-button');
-    var signOutButton = document.getElementById('google-signout-button');
-    
-    // Hide the sign-out button by default
-    signOutButton.style.display = 'none';
-    
-    // Add event listener to the sign-in button
-    signInButton.addEventListener('click', function() {
-      gapi.auth2.getAuthInstance().signIn().then(function() {
-        // On successful sign-in, hide the sign-in button and show the sign-out button
-        signInButton.style.display = 'none';
-        signOutButton.style.display = 'block';
-      });
-    });
-    
-    // Add event listener to the sign-out button
-    signOutButton.addEventListener('click', function() {
-      gapi.auth2.getAuthInstance().signOut().then(function() {
-        // On successful sign-out, hide the sign-out button and show the sign-in button
-        signOutButton.style.display = 'none';
-        signInButton.style.display = 'block';
-      });
-    });
-    
-    // Check the user's authentication status on page load
-    if (gapi.auth2.getAuthInstance().isSignedIn.get()) {
-      // If the user is already signed in, hide the sign-in button and show the sign-out button
-      signInButton.style.display = 'none';
-      signOutButton.style.display = 'block';
-    } else {
-      // If the user is not signed in, hide the sign-out button and show the sign-in button
-      signOutButton.style.display = 'none';
-      signInButton.style.display = 'block';
-    }
-  });
-});
-</script>
 	<!-- Navigation -->
 	<nav class="w3-bar w3-black">
 		<a href="index.html" class="w3-button w3-bar-item">Home</a>
@@ -85,14 +42,21 @@
 			</form>
       <button onclick="toggleDarkMode()">Toggle Dark/White Mode</button>
 		</div>
-		<button id="google-signin-button">Sign in with Google</button>
-<button id="google-signout-button">Sign out</button>
     <script>
       function toggleDarkMode() {
         var body = document.getElementsByTagName("BODY")[0];
         body.classList.toggle("dark-mode");
       }
     </script>
+	<a href="#" onclick="signOut();">Sign out of Google</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
 		<section>
 			<h3>Introduction</h3>
 			<p>Hi, my name is imtrollmastr, you can call me Eddie. I am a YouTuber and I play The Simpsons: Tapped Out and Roblox. My favorite movie is The Simpsons Movie, especially the part where Homer points the middle finger. I stream online via Twitch. I love the Simpsons so much, I changed my school profile picture into a Simpsons GIF of Ralph Wiggum rolling down a hill while Lisa Simpson watches. My wish is to try Duff Beer in real life.</p>
