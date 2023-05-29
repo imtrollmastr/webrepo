@@ -1,9 +1,14 @@
 <html>
     <head>
         <title>Social Login</title>
-
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta name="google-signin-client_id" content="1073033281353-tj3nr1eib0chfsl6rf06h2uk3ke58him.apps.googleusercontent.com">
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+            .font {
+              font-family: 'Luckiest Guy', cursive;
+            }
 
             body{
                 background-image: url('bg.jpg');
@@ -153,20 +158,29 @@
     </head>
     <body>
         <form action="" class="login">
-            <header><img src="login.png"></header>
-            <div class="field"><span class="fa fa-user"></span><input type="text" placeholder="Email or Username"></div>
+            <header><img src="images/regular.png"></header>
+            <div class="field"><span class="fa fa-user"></span><input type="text" class="font" placeholder="Email or Username"></div>
             <div class="field"><span class="fa fa-lock"></span><input type="password" placeholder="Password"></div>
-            <div class="forgot-password"><a href="">Forgot password?</a></div>
+            <div class="forgot-password"><a href="#">Forgot password?</a></div>
             <input type="submit" class="submit" value="LOGIN">
             <span class="login-form-copy">Or Login with</span>
             <div class="social-icons">
-                <div class="social-icon instagram"><span class="fa fa-instagram"></span></div>
+                <div class="social-icon instagram"><span class="fa fa-instagram"><img src="images/instagram.png"></img></span></div>
                 <div class="social-icon facebook"><span class="fa fa-facebook"></span></div>
-                <div class="social-icon google"><span class="fa fa-google"></span></div>
+                <div class="social-icon google"><span class="fa fa-google g-signin2" data-onsuccess="onSignIn"></span></div>
                 <div class="social-icon linkedin"><span class="fa fa-linkedin"></span></div>
                 <div class="social-icon twitter"><span class="fa fa-twitter"></span></div>
             </div>
-            <span class="login-form-copy">Don't have an account?<a href="" class="login-form_sign-up">Sign up</a></span>
+            <script>
+              function onSignIn(googleUser) {
+              var profile = googleUser.getBasicProfile();
+              console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+              console.log('Name: ' + profile.getName());
+              console.log('Image URL: ' + profile.getImageUrl());
+              console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+            }
+            </script>
+            <span class="login-form-copy">Don't have an account?<a href="#" class="login-form_sign-up">Sign up</a></span>
         </form>
     </body>
 </html>
