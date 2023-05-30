@@ -158,15 +158,16 @@
         </style>
     </head>
     <body>
+        <script src="data/validate.js"></script>
         <form action="" class="login">
             <header><img src="images/regular.png"></header>
             <div class="field"><span class="fa fa-user"></span><input type="text" class="font" placeholder="Email or Username"></div>
-            <div class="field"><span class="fa fa-lock"></span><input type="password" placeholder="Password"></div>
+            <div class="field"><span class="fa fa-lock"></span><input id="passwordBox" type="password" placeholder="Password"></div>
             <div class="forgot-password"><a href="#">Forgot password?</a></div>
-            <input type="submit" class="submit" value="LOGIN">
+            <input type="submit" class="submit" onclick="return checkPassword();" value="LOGIN">
             <span class="login-form-copy">Or Login with Google</span>
             <div class="social-icons">
-                <div class="social-icon google"><span class="login g-signin2" data-onsuccess="onSignIn"></span></div>
+                <div class="social-icon google"><span class="g-signin2" data-onsuccess="onSignIn"></span></div>
             </div>
             <script>
               function onSignIn(googleUser) {
