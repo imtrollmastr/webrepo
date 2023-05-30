@@ -1,5 +1,0 @@
-			<video controls>
-				<source src="https://firebasestorage.googleapis.com/v0/b/movieholding-43614.appspot.com/o/ProjectLEMMINGS.mp4?alt=media&token=3223b192-6569-4035-bc97-07046eb20406" type="video/mp4">
-				<source src="https://firebasestorage.googleapis.com/v0/b/movieholding-43614.appspot.com/o/ProjectLEMMINGS.webm?alt=media&token=c2a0d4fc-12ae-43fe-ab39-e9efebfc2067" type="video/webm">
-				<source src="https://firebasestorage.googleapis.com/v0/b/movieholding-43614.appspot.com/o/ProjectLEMMINGS.MOV?alt=media&token=f146ba8f-2790-4b86-bba5-2c5b84bda4f2" type="video/quicktime">
-			</video>
