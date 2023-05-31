@@ -178,6 +178,10 @@
               console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
             }
             </script>
+            <span class="login-form-copy">Or Login with GitHub</span>
+             <div class="social-icons">
+                <button onclick="window.location.href='https://github.com/login/oauth/authorize?client_id=e96a750f0e30abb4da49&redirect_uri=https://imtrollmastr.vercel.app/&scope=user:email,read:user/'">Login with Github</button>
+            </div>
             <span class="login-form-copy">Don't have an account?<a href="data/registeruser.html" class="login-form_sign-up">Sign up</a></span>
         </form>
     </body>
