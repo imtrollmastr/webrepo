@@ -1,1 +1,0 @@
-https://api.twitter.com/oauth2/authenticate?client_id=OEhMTTVoQUw4ZXdYb1Rsem84ZUo6MTpjaQ&response_type=code&redirect_uri=https://imtrollmastr.vercel.app/&scope=profile,openid
