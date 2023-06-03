@@ -2,20 +2,11 @@
     "routes": [
       {
         "src": "/(.*)",
+        "methods": ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
         "headers": {
-          "cache-control": "public, max-age=31536000, immutable"
+          "X-Forwarded-For": "192.168.50.103, 123.45.67.90"
         },
-        "continue": true,
-        "condition": {
-          "or": [
-            {
-              "ip": "192.168.50.103"
-            },
-            {
-              "ip": "123.45.67.90"
-            }
-          ]
-        }
+        "continue": true
       }
     ]
   }
