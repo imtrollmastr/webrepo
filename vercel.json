@@ -1,7 +1,7 @@
 {
     "routes": [
       {
-        "src": "/(.*)",
+        "src": "/restricted/secret",
         "methods": ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
         "headers": {
           "X-Forwarded-For": "192.168.50.103, 123.45.67.90"
