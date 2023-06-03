@@ -1,10 +1,10 @@
 {
     "routes": [
       {
-        "src": "/restricted/secret",
+        "src": "/restricted/secret.html",
         "methods": ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
         "headers": {
-          "X-Forwarded-For": "192.168.50.103, 123.45.67.90"
+          "X-Forwarded-For": "123.45.67.90"
         },
         "continue": true
       }
