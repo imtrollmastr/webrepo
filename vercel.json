@@ -1,0 +1,28 @@
+{
+    "routes": [
+      {
+        "src": "/(.*)",
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable"
+        },
+        "continue": true,
+        "permissions": {
+          "read": true,
+          "write": false
+        },
+        "condition": {
+          "or": [
+            {
+              "ip": "192.168.50.103"
+            },
+            {
+              "ip": "123.45.67.90"
+            },
+            {
+              "ip": "123.45.67.91"
+            }
+          ]
+        }
+      }
+    ]
+  }
