@@ -1,6 +1,8 @@
+let password = prompt("Enter your password:");
+
 if (password === "yomamaobama") {
-    alert("Welcome Johann!");
-    window.location.href = "restricted/openadmin.html";
-  } else {
-    location.reload();
-  }
+  alert("Welcome Johann!");
+  window.location.href = "restricted/openadmin.html";
+} else {
+  location.reload();
+}
