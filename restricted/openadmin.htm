@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Owner Page</title>
+    <link rel="stylesheet" href="https://imtrollmastr.vercel.app/style.css">
+  </head>
+  <body>
+    <h1>Welcome to the Owner Page</h1>
+    <p>This is a restricted area. Only authorized personnel are allowed.</p>
+    <form>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br><br>
+      <button type="button" onclick="login()">Login</button>
+    </form>
+    <div id="admin-content" style="display: none;">
+      <h2>User Management</h2>
+      <p>Here are some actions you can perform on user accounts:</p>
+      <ul>
+        <li><a href="#">View user data</a></li>
+        <li><a href="#">Edit user data</a></li>
+        <li><a href="#">Add new users</a></li>
+        <li><a href="#">Delete users</a></li>
+      </ul>
+      <h2>Data Analysis</h2>
+      <p>You can view some data analysis reports here:</p>
+      <ul>
+        <li><a href="#">Sales reports</a></li>
+        <li><a href="#">Website traffic reports</a></li>
+        <li><a href="#">Customer feedback reports</a></li>
+      </ul>
+      <p><button onclick="logout()">Logout</button></p>
+    </div>
+    <script>
+      function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if (username === "admin" && password === "password") {
+          document.getElementById("admin-content").style.display = "block";
+          document.getElementsByTagName("form")[0].style.display = "none";
+        } else {
+          alert("Invalid username or password.");
+        }
+      }
+      
+      function logout() {
+        document.getElementById("admin-content").style.display = "none";
+        document.getElementsByTagName("form")[0].style.display = "block";
+      }
+    </script>
+  </body>
+</html>
