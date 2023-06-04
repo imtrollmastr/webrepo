@@ -1,6 +1,6 @@
-if (password == "yomamaobama") {
-    alert("welcome johann")
-    location.window.href = "restricted/openadmin.htm"
+if (password === "yomamaobama") {
+    alert("Welcome Johann!");
+    window.location.href = "restricted/openadmin.html";
+  } else {
+    location.reload();
   }
-  else
-  location.reload()
