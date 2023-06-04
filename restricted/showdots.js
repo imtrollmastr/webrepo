@@ -13,4 +13,4 @@ function showText() {
       .catch((error) => {
         alert('Error copying text to clipboard:', error);
       });
-  }
+    }
