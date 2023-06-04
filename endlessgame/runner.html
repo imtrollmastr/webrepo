@@ -69,9 +69,10 @@
         this.loop();
       },
       stop: function(reason) {
-        this.finished = true;
-        window.clearTimeout(this.timer);
-        alert(reason == "win" ? "u win" : "you touched a cat");
+      this.finished = true;
+      window.clearTimeout(this.timer);
+      alert(reason == "win" ? "u win" : "you touched a cat");
+      location.reload();
       }
     };
     var world = {
