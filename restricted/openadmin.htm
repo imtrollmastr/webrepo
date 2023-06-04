@@ -13,7 +13,7 @@
     </style>
   </head>
   <body>
-    <h1>Welcome to the Owner Page</h1>
+    <h1>Welcome to the Admin Page</h1>
     <p>This is a restricted area. Only authorized personnel are allowed.</p>
     <form>
       <label for="username">Username:</label>
@@ -41,10 +41,23 @@
       <p><button onclick="logout()">Logout</button></p>
     </div>
     <script>
+      var credentials = [
+        {username: "imtrollmastr", password: "yomamaobama"},
+        {username: "testuser1", password: "password"},
+        {username: "admin", password: "password"}
+      ];
+      
       function login() {
         var username = document.getElementById("username").value;
         var password = document.getElementById("password").value;
-        if (username === "admin" && password === "password") {
+        var valid = false;
+        for (var i = 0; i < credentials.length; i++) {
+          if (username === credentials[i].username && password === credentials[i].password) {
+            valid = true;
+            break;
+          }
+        }
+        if (valid) {
           document.getElementById("admin-content").style.display = "block";
           document.getElementsByTagName("form")[0].style.display = "none";
         } else {
