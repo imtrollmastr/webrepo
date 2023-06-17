@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Recommended Videos | imtrollmastr</title>
+        <link rel="icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="recvid.css">
+    </head>
+    <body>
+        <h1>Recommended Videos</h1>
+        <h3>Chosen by imtrollmastr, made by imtrollmastr</h3>
+        <div class="slideshow-container">
+            <div class="slideshow">
+                <div class="numbertext">1 / 3</div>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7GxtE9eRQfQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div class="text">I tried out all the ULTIMATE MOVESETS... (Saitama/The Strongest Battlegrounds)</div>
+            </div>
+            <div class="slideshow">
+                <div class="numbertext">2 / 3</div>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/lnWHDIEYyZw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div class="text">The Root Pack presents The LEMMINGS Movie...</div>
+            </div>
+            <div class="slideshow">
+                <div class="slideshow">3 / 3</div>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1Sd90NihQWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div class="text">dancing fish be like…</div>
+            </div>
+            <a class="prev" onclick="nextPicture(-1)">&#10094</a>
+            <a class="next" onclick="nextPicture(1)">&#10095</a>
+        </div>
+        <div style="text-align:center">
+            <div class="dot" onclick="currentPicture(1)"></div>
+            <div class="dot" onclick="currentPicture(2)"></div>
+            <div class="dot" onclick="currentPicture(3)"></div>
+        </div>
+        <script>
+            var pictureIndex = 1;
+            showPics(pictureIndex);
+
+            function nextPicture(n) {
+                showPics(pictureIndex += n);
+            }
+
+            function currentPicture(n) {
+                showPics(pictureIndex = n);
+            }
+
+            function showPics(n) {
+                var i;
+                var pictures = document.getElementsByClassName("slideshow");
+                var dots = document.getElementById("dot");
+                if (n > pictures.length) {
+                    pictureIndex = 1
+                }
+                if (n < 1) {
+                    pictureIndex = pictures.length
+                }
+                for (i = 0; i < pictures.length; i++) {
+                    pictures[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                pictures[pictureIndex-1].style.display = "block";
+                dots[pictureIndex-1].className += " active";
+            }
+        </script>
+    </body>
+</html>
