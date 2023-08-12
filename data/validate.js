@@ -3,8 +3,8 @@ function checkPassword() {
     var password = document.getElementById("passwordBox");
     var passwordText = password.value;
     if(passwordText == account1) {
-      return true;
       window.location.href="https://imtrollmastr.vercel.app/"
+      return true
     }
     alert("ErrorData: accessdenied; returnedVoid")
     return false
