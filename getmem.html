@@ -2,16 +2,21 @@
 <html>
     <head>
         <title>Get Membership ID</title>
+        <link rel="stylesheet" href="https://imtrollmastr.vercel.app/style.css">
     </head>
     <body>
         <h3>Get your membership ID here!</h3>
-        <button id="memid">Click here</button>
-        <p id="yourid"></p>
+        <button onclick="displayText()">Find your membership ID</button>
+        <div id="textField" style="display: none;">
+          Membership ID: BF2MVHASKNFXZ
+        </div>
+        <div id="textField" style="display: none;">
+            Last Name: GUEST
+        </div>
         <script>
-            var buttonclick = document.getElementById("memid");
-            var newid = document.getElementById("yourid");
-            if(buttonclick.click()) {
-                newid.textContent("hello")
+            function displayText() {
+                var text = document.getElementById("textField");
+                text.style.display = "block";
             }
         </script>
     </body>
