@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Get Membership ID</title>
+    </head>
+    <body>
+        <h3>Get your membership ID here!</h3>
+        <button id="memid">Click here</button>
+        <p id="yourid"></p>
+        <script>
+            var buttonclick = document.getElementById("memid");
+            var newid = document.getElementById("yourid");
+            if(buttonclick.click()) {
+                newid.textContent("hello")
+            }
+        </script>
+    </body>
+</html>
