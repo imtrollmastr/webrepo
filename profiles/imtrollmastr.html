@@ -31,11 +31,23 @@
     <body style="background-color: black;">
         <div class="container">
             <div class="image">
-                <img src="https://imtrollmastr.vercel.app/images/outline_verified_white_24dp.png"
+                <img src="https://imtrollmastr.vercel.app/images/outline_verified_white_24dp.png">
             </div>
             <div class="text">
                 <h4>imtrollmastr</h4>
             </div>
         </div>
+        <section id="info">
+            <p>Status:</p>
+            <div id="status"></div>
+            <script>
+                status = document.getElementById("status")
+                function edit() {
+                    var editprompt = prompt("Edit status:")
+                    editprompt = status
+                }
+            </script>
+            <button>Edit Status</button>
+        </section>
     </body>
 </html>
