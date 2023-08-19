@@ -39,12 +39,12 @@
         </div>
         <section id="info">
             <p>Status:</p>
-            <div id="status"></div>
+            <p id="status"></p>
             <script>
                 status = document.getElementById("status")
                 function edit() {
                     var editprompt = prompt("Edit status:")
-                    editprompt = status
+                    editprompt = status.str
                 }
             </script>
             <button onclick="return edit()">Edit Status</button>
