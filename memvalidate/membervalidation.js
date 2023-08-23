@@ -3,11 +3,11 @@ function validate() {
     if(loginusr == "imtrollmastr") {
         var loginpsw = prompt("Enter imtrollmastr Website Password: ");
         if(loginpsw == "admin") {
-            window.location.href = "";
+            window.location.href = "https://imtrollmastr.vercel.app/memportal.html";
         }
         else {
             console.log("Auth failed");
-            window.location.reload();
+            alert("bruh u got the username wrong")
         }
     }
     else {
